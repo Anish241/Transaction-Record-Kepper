@@ -26,7 +26,7 @@ SECRET_KEY = 'django-insecure-$q-ac5(j@aii-^#k#*!piw5rrv*)vvnhv1ziwmngm+se-y&8j+
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['*']
+ALLOWED_HOSTS = ['*','transaction-record-kepper-production.up.railway.app','https://transaction-record-kepper-production.up.railway.app/','https://transaction-record-kepper-production.up.railway.app']
 
 
 # Application definition
