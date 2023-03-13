@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Transaction Records</title>
+    <link rel="stylesheet" href="{% static 'css/index.css' %}">
+</head>
+<body>
+    <h1><span class="blue"></span>Transaction<span class="blue"></span> <span class="yellow">Records</pan></h1>
+        <!-- make a + button to add a new transaction -->
+        <div class="add">
+            <a href="/tform" style="color: white;">
+            <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="currentColor" class="bi bi-plus" viewBox="0 0 16 16">
+                <path d="M8 4a.5.5 0 0 1 .5.5v3h3a.5.5 0 0 1 0 1h-3v3a.5.5 0 0 1-1 0v-3h-3a.5.5 0 0 1 0-1h3v-3A.5.5 0 0 1 8 4z"/>
+              </svg></a>
+        </div>
+        
+        <table class="container">
+            <thead>
+                <tr>
+                    <th><h1>Date</h1></th>
+                    <th><h1>Transaction</h1></th>
+                    <th><h1>Amount</h1></th>
+                    <th><h1>Mode</h1></th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for transaction in transactions reversed %}
+                <tr>
+                    <td>{{transaction.date}}</td>
+                    <td>{{transaction.description}}</td>
+                    <td>₹ {{transaction.amount}}</td>
+                    <td>{{transaction.mode}}</td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table> 
+</body>
+<script src="{% static 'js/index.js'%}"></script>
+</html>
